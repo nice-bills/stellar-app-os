@@ -17,7 +17,10 @@ export default function PurchasePage() {
   }, []);
 
   const handleNext = () => {
-    router.push("/credits/purchase/wallet");
+    if (selection) {
+      const selectionParam = encodeURIComponent(JSON.stringify(selection));
+      router.push(`/credits/purchase/wallet?selection=${selectionParam}`);
+    }
   };
 
   const canProceed = selection?.projectId && selection.quantity > 0 && selection.calculatedPrice > 0;

@@ -120,12 +120,12 @@ export function WalletConnectionStep({ onConnectionChange }: WalletConnectionPro
                     {wallet.publicKey.slice(0, 8)}...{wallet.publicKey.slice(-8)}
                   </span>
                 </CardTitle>
-                <CardDescription className="mt-2">
+                <div className="mt-2 text-sm text-muted-foreground">
                   Network:{" "}
                   <Badge variant={wallet.network === "mainnet" ? "default" : "outline"}>
                     {wallet.network}
                   </Badge>
-                </CardDescription>
+                </div>
               </div>
               <Button
                 variant="outline"
