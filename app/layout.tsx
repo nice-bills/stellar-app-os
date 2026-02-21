@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { PWAProvider } from "@/components/providers/PWAProvider";
+import { WalletProviderWrapper } from "@/components/providers/WalletProviderWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -55,7 +55,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <PWAProvider>{children}</PWAProvider>
+        <WalletProviderWrapper>{children}</WalletProviderWrapper>
       </body>
     </html>
   );
