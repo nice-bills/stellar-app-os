@@ -7,9 +7,15 @@ import { Counter } from "@/components/atoms/Counter";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/molecules/Card";
 
 import { useToast } from "@/components/ui/toast/hooks";
+import { TransactionHistoryModal } from "../components/ui/TransactionHistoryModal";
+import { useState } from "react";
 
 
 export default function Home() {
+
+  const [showTx, setShowTx] = useState(false);
+
+  const address = "GDRXE2BQUC3AZK4ILC2SIYVA3R5Z4B6CFOTZPND6PN5AWO3YQWF5CH3F";
 
  const { addToast } = useToast();
 
@@ -33,6 +39,21 @@ export default function Home() {
       Show Toast
     </Button>
     </CardContent>
+
+      <CardContent className="flex flex-col gap-3">
+  <Button
+        onClick={() => setShowTx(true)}
+        variant="default" size="lg" className="w-full"
+      >
+        Transactions
+      </Button>
+      </CardContent>
+
+      <TransactionHistoryModal
+        open={showTx}
+        onClose={() => setShowTx(false)}
+        address={address}
+      />
 
       {/* Platform Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl">
