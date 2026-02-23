@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils';
 
 export function CreditPortfolio() {
   const [isClient, setIsClient] = useState(false);
-  
+
   useEffect(() => {
     setIsClient(true);
   }, []);
