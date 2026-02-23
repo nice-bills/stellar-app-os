@@ -22,6 +22,8 @@ export function CreditPortfolio() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // This pattern is intentional for proper SSR hydration in Next.js
+    // It's necessary to defer rendering until the client side
     setIsClient(true);
   }, []);
 
