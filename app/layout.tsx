@@ -7,12 +7,6 @@ import { Footer } from '@/components/organisms/Footer/Footer';
 import { ToastProvider } from "@/components/ui/toast/toast-provider";
 
 
-
-
-import { ToastProvider } from "@/components/ui/toast/toast-provider";
-
-
-
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
