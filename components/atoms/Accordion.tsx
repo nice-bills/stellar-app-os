@@ -9,7 +9,6 @@ interface AccordionItem {
   title: string;
   content: string;
 }
-
 interface AccordionProps {
   items: AccordionItem[];
   className?: string;
