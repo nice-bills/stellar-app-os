@@ -1,14 +1,14 @@
-import type { CreditSelectionState } from "./carbon";
-import type { WalletConnection } from "./wallet";
+import type { CreditSelectionState } from './carbon';
+import type { WalletConnection } from './wallet';
 
 export type TransactionStatus =
-  | "idle"
-  | "preparing"
-  | "signing"
-  | "submitting"
-  | "confirming"
-  | "success"
-  | "error";
+  | 'idle'
+  | 'preparing'
+  | 'signing'
+  | 'submitting'
+  | 'confirming'
+  | 'success'
+  | 'error';
 
 export interface PaymentState {
   selection: CreditSelectionState;
@@ -38,7 +38,7 @@ export interface PaymentMintingProps {
 export interface BuildTransactionRequest {
   selection: CreditSelectionState;
   walletPublicKey: string;
-  network: "testnet" | "mainnet";
+  network: 'testnet' | 'mainnet';
   idempotencyKey: string;
 }
 

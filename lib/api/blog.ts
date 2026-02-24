@@ -82,7 +82,7 @@ export async function fetchBlogPosts(params: {
     searchParams.set('category', params.category);
   }
 
-  const apiUrl = process.env.CMS_API_URL!;
+  const apiUrl = process.env.CMS_API_URL;
   const url = `${apiUrl}/blog${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
 
   try {
@@ -106,9 +106,7 @@ export async function fetchBlogPosts(params: {
       return BlogListResponseSchema.parse(data);
     } catch (validationError) {
       const msg =
-        validationError instanceof Error
-          ? validationError.message
-          : 'Unknown validation error';
+        validationError instanceof Error ? validationError.message : 'Unknown validation error';
       throw new Error(`CMS API response validation failed: ${msg}`);
     }
   } catch (error) {
@@ -117,9 +115,7 @@ export async function fetchBlogPosts(params: {
       error instanceof TypeError && error.message.toLowerCase().includes('fetch');
 
     if (isNetworkError) {
-      console.warn(
-        `[Blog API] Network error contacting ${url}. Falling back to mock data.`
-      );
+      console.warn(`[Blog API] Network error contacting ${url}. Falling back to mock data.`);
       return getMockBlogData({ page: params.page, category: params.category });
     }
 

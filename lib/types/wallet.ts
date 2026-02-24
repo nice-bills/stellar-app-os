@@ -1,6 +1,6 @@
-export type WalletType = "freighter" | "albedo" | "custodial";
+export type WalletType = 'freighter' | 'albedo' | 'custodial';
 
-export type NetworkType = "testnet" | "mainnet";
+export type NetworkType = 'testnet' | 'mainnet';
 
 export interface WalletBalance {
   xlm: string;
@@ -23,6 +23,7 @@ export interface WalletContextValue {
   refreshBalance: () => Promise<void>;
   isLoading: boolean;
   error: string | null;
+  loadPersistedConnection: () => void;
 }
 
 export interface WalletConnectionProps {
