@@ -643,6 +643,14 @@ refactor(dashboard): extract credit cards into separate component
 chore(deps): update TypeScript to 5.3.3
 ```
 
+### Using the Commit Message Template
+
+To help you follow these conventions, we provide a `.gitmessage` template in the root of the repository. To configure Git to use it for all commits in this repository, run:
+
+```bash
+git config commit.template .gitmessage
+```
+
 ### Atomic Commit Rules
 
 These rules ensure your commits are safe and reviewable:
